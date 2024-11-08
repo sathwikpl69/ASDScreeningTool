@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz Results</h1>
+        <nav>
+            <a href="index.html">Home</a> | 
+            <a href="about.html">About</a> | 
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="terms-of-service.html">Terms of Service</a> | 
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Your Screening Results</h2>
+        <p id="result">Loading results...</p>
+        <button onclick="window.location.href='quiz.html'">Retake Quiz</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ASD Screening Quiz. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Retrieve quiz responses and prediction result from localStorage
+        const responses = JSON.parse(localStorage.getItem('quizResponses'));
+        const prediction = JSON.parse(localStorage.getItem('predictionResult'));
+
+        if (responses && prediction !== null) {
+            // Display the prediction result
+            let resultText = prediction === "positive"
+                ? "The person may have signs of ASD. Please consider consulting a professional for further assessment."
+                : "The person does not show significant signs of ASD.";
+            
+            document.getElementById('result').innerText = resultText;
+        } else {
+            // If no data found in localStorage, display an error message
+            document.getElementById('result').innerText = "No results found. Please complete the quiz first.";
+        }
+    </script>
+</body>
+</html>
