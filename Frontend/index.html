@@ -18,16 +18,53 @@
     </header>
 
     <main>
-        <h2>Login</h2>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <div id="authForms">
+            <!-- Login Form -->
+            <div id="loginFormDiv">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+    
+                    <button type="submit">Login</button>
+                </form>
+                <p><a href="javascript:void(0)" onclick="toggleSignup()">Don't have an account? Sign Up</a></p>
+                <p><a href="javascript:void(0)" onclick="toggleForgotPassword()">Forgot Password?</a></p>
+            </div>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <!-- Sign Up Form -->
+            <div id="signupFormDiv" style="display: none;">
+                <h2>Sign Up</h2>
+                <form id="signupForm">
+                    <label for="newUsername">Username:</label>
+                    <input type="text" id="newUsername" name="username" required>
+    
+                    <label for="newPassword">Password:</label>
+                    <input type="password" id="newPassword" name="password" required>
+    
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+    
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p><a href="javascript:void(0)" onclick="toggleLogin()">Already have an account? Login</a></p>
+            </div>
 
-            <button type="submit">Login</button>
-        </form>
+            <!-- Forgot Password Form -->
+            <div id="forgotPasswordFormDiv" style="display: none;">
+                <h2>Forgot Password</h2>
+                <form id="forgotPasswordForm">
+                    <label for="resetEmail">Enter your email:</label>
+                    <input type="email" id="resetEmail" name="email" required>
+    
+                    <button type="submit">Reset Password</button>
+                </form>
+                <p><a href="javascript:void(0)" onclick="toggleLogin()">Back to Login</a></p>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -35,20 +72,64 @@
     </footer>
 
     <script>
-        // Handle the form submission and redirect to quiz.html after a successful login
+        // Switch to the Sign Up form
+        function toggleSignup() {
+            document.getElementById('loginFormDiv').style.display = 'none';
+            document.getElementById('signupFormDiv').style.display = 'block';
+            document.getElementById('forgotPasswordFormDiv').style.display = 'none';
+        }
+
+        // Switch to the Login form
+        function toggleLogin() {
+            document.getElementById('loginFormDiv').style.display = 'block';
+            document.getElementById('signupFormDiv').style.display = 'none';
+            document.getElementById('forgotPasswordFormDiv').style.display = 'none';
+        }
+
+        // Switch to the Forgot Password form
+        function toggleForgotPassword() {
+            document.getElementById('loginFormDiv').style.display = 'none';
+            document.getElementById('signupFormDiv').style.display = 'none';
+            document.getElementById('forgotPasswordFormDiv').style.display = 'block';
+        }
+
+        // Handle login form submission
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();  // Prevent form from refreshing the page
 
-            // You can validate credentials here (basic logic or call to a backend)
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            if (username === "admin" && password === "password123") { // Example: simple login check
-                // Redirect to quiz.html on successful login
-                window.location.href = 'quiz.html';
+            if (username === "admin" && password === "password123") { // Example simple login check
+                window.location.href = 'quiz.html';  // Redirect to quiz page
             } else {
                 alert('Invalid username or password');
             }
+        });
+
+        // Handle sign up form submission
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (newPassword === confirmPassword) {
+                alert('Account created successfully! You can now log in.');
+                toggleLogin();  // Go back to login
+            } else {
+                alert('Passwords do not match!');
+            }
+        });
+
+        // Handle forgot password form submission
+        document.getElementById('forgotPasswordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('resetEmail').value;
+            alert('Password reset link sent to ' + email); // In a real scenario, send the reset link to the email
+            toggleLogin();  // Go back to login
         });
     </script>
 </body>

@@ -1,36 +1,28 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #4a90e2;
-    padding: 15px;
-    text-align: center;
+    background-color: #007BFF;
     color: white;
+    padding: 10px 0;
+    text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8em;
+    font-size: 2rem;
 }
 
 nav a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     margin: 0 10px;
+    font-weight: bold;
 }
 
 nav a:hover {
@@ -39,153 +31,286 @@ nav a:hover {
 
 /* Main Content */
 main {
-    flex: 1;
+    max-width: 900px;
+    margin: 20px auto;
     padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
+    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
 }
 
-/* Forms */
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
 }
 
 form label {
-    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1rem;
 }
 
-form input[type="radio"] {
-    margin-right: 5px;
-}
-
-button, input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-button:hover, input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-/* Page-specific Layout */
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-p {
-    margin-bottom: 20px;
-}
-
-/* Footer */
-footer {
-    background-color: #4a90e2;
-    color: white;
-    text-align: center;
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
     padding: 10px;
-    font-size: 0.9em;
-}
-
-/* Login Page */
-.login-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-.login-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
-/* Quiz Form */
-#quizForm label {
-    margin-top: 10px;
+form button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
-#quizForm input[type="radio"] {
-    margin-left: 10px;
+form button:hover {
+    background-color: #218838;
 }
 
-/* Results Page */
-#result {
-    font-size: 1.2em;
-    color: #333;
-    padding: 20px;
-    background-color: #e6f7ff;
-    border: 1px solid #b3e0ff;
-    border-radius: 5px;
-}
-
-/* Error Page */
-.error-message {
-    font-size: 1.5em;
-    color: red;
+footer {
     text-align: center;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Auth Form Styles */
+#authForms {
+    width: 100%;
+}
+
+#loginFormDiv, #signupFormDiv, #forgotPasswordFormDiv {
+    display: none;
+}
+
+#loginFormDiv {
+    display: block;
+}
+
+#signupFormDiv, #forgotPasswordFormDiv {
     margin-top: 20px;
 }
 
-/* Additional Page Layouts */
-.page-section {
-    margin-bottom: 20px;
+#signupFormDiv input,
+#forgotPasswordFormDiv input {
+    width: 100%;
 }
 
-.page-section h2 {
+/* Links for switching between forms */
+p a {
+    color: #007BFF;
+    font-size: 1rem;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Additional Page Styles */
+
+/* About, Contact, Privacy Policy, Terms of Service, FAQ, 404 Error Pages */
+h2 {
+    font-size: 1.8rem;
     color: #333;
-    font-size: 1.3em;
-    margin-bottom: 10px;
 }
 
-/* FAQ Page */
-.faq-question {
-    font-weight: bold;
-}
-
-.faq-answer {
-    margin-bottom: 15px;
-    padding-left: 15px;
+p {
+    font-size: 1rem;
+    line-height: 1.6;
     color: #555;
 }
 
-/* Responsive Layout */
-@media (max-width: 600px) {
-    main {
-        padding: 10px;
-        box-shadow: none;
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+ul li {
+    font-size: 1rem;
+    color: #555;
+}
+
+div.content {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Error Page */
+#notFound {
+    text-align: center;
+    font-size: 2rem;
+    color: #ff3333;
+}
+
+#notFound p {
+    font-size: 1.2rem;
+}
+
+/* 404 Page */
+#notFound {
+    font-size: 2.5rem;
+    color: #ff3333;
+    text-align: center;
+    padding: 20px;
+}
+
+#notFound p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For Small Devices (Phones) */
+@media (max-width: 480px) {
+    header {
+        font-size: 1.5rem;
+        padding: 15px 0;
     }
 
-    header, footer {
-        text-align: center;
-        padding: 15px;
-    }
-
-    .login-container {
-        padding: 15px;
+    header h1 {
+        font-size: 1.5rem;
     }
 
     nav a {
         display: block;
         margin: 5px 0;
+        font-size: 1rem;
+    }
+
+    main {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"],
+    form button {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+
+    #authForms {
+        padding: 10px;
+    }
+}
+
+/* For Medium Devices (Tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+    header {
+        font-size: 1.8rem;
+        padding: 15px 0;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav a {
+        font-size: 1.1rem;
+        margin: 0 8px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"],
+    form button {
+        font-size: 1.1rem;
+        padding: 9px;
+    }
+
+    footer {
+        font-size: 0.85rem;
+    }
+}
+
+/* For Larger Devices (Laptops, Desktops) */
+@media (min-width: 769px) {
+    header {
+        font-size: 2rem;
+        padding: 20px 0;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+        margin: 0 15px;
+    }
+
+    main {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"],
+    form button {
+        font-size: 1.1rem;
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 1rem;
+    }
+}
+
+/* For Extra Large Devices (Large Screens, Full HD and above) */
+@media (min-width: 1200px) {
+    header {
+        font-size: 2.5rem;
+        padding: 25px 0;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    nav a {
+        font-size: 1.3rem;
+        margin: 0 20px;
+    }
+
+    main {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 25px;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"],
+    form button {
+        font-size: 1.2rem;
+        padding: 12px;
+    }
+
+    footer {
+        font-size: 1.1rem;
     }
 }
