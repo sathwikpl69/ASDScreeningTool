@@ -1,0 +1,159 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f7f9fb;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    text-align: center;
+}
+
+/* Header Styling */
+header {
+    background-color: #2d3b55;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin: 0;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+/* Authentication Form Container */
+#authForms {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    margin-top: 100px; /* Offset for fixed header */
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+#authForms h2 {
+    font-size: 1.8rem;
+    color: #2d3b55;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+/* Label Styling */
+label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input Fields Styling */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #2d3b55;
+    box-shadow: 0 0 5px rgba(45, 59, 85, 0.6);
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #f4bb33;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2d3b55;
+    transform: scale(1.05);
+}
+
+/* Link Styling */
+p a {
+    font-size: 1rem;
+    color: #2d3b55;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #f4bb33;
+}
+
+/* Footer Styling */
+footer {
+    font-size: 1rem;
+    color: #555;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

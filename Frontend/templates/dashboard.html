@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ASD Screening Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <header>
+        <nav><h1>Welcome to your Dashboard</h1></nav>
+        
+    </header>
+
+    <main>
+        <h2>Hello, {{ username }}!</h2>  <!-- Display username -->
+
+        <p>Welcome to the ASD Screening Quiz Dashboard. From here, you can:</p>
+        <ul>
+            <li><a href="{{ url_for('quiz') }}">Start the Quiz</a></li>  <!-- Correct link to quiz -->
+            <li><a href="{{ url_for('results') }}">View Results</a></li>
+        </ul>
+
+        <p><a href="{{ url_for('logout') }}">Logout</a></p>  <!-- Logout link -->
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ASD Screening Quiz. All rights reserved.</p>
+    </footer>
+</body>
+</html>

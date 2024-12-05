@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - ASD Screening Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/privacy-policy.css') }}">
+</head>
+<body>
+    <header> 
+        <h1>ASD Screening Quiz</h1>
+        <nav>
+            <a href="{{ url_for('quiz') }}">Back to Quiz</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Privacy Policy</h2>
+        <p>Your privacy is important to us. This policy explains how we collect, use, and protect your data.</p>
+        <ul>
+            <li><strong>Data Collection:</strong> We collect quiz responses for analysis.</li>
+            <li><strong>Data Use:</strong> Your data is used solely for the purpose of providing a preliminary ASD screening.</li>
+            <li><strong>Data Protection:</strong> We ensure that your data is stored securely and never shared with third parties without your consent.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>If you have any questions, please <a href="{{ url_for('contact') }}">contact us</a>.</p>
+    </footer>
+</body>
+</html>

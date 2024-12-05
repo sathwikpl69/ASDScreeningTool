@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ASD Screening Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+<body>
+    <header>
+        <h1>ASD Screening Quiz</h1>
+        <nav>
+            <a href="{{ url_for('quiz') }}">Back to Quiz</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>About the ASD Screening Quiz</h2>
+        <p>This app helps screen individuals for Autism Spectrum Disorder (ASD) by asking behavioral questions.</p>
+        <p>It uses machine learning algorithms (like KNN) to provide preliminary results based on your answers. Please consult a professional for further evaluation.</p>
+    </main>
+
+    <footer>
+        <p>For more information, contact us or visit our <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>.</p>
+    </footer>
+</body>
+</html>

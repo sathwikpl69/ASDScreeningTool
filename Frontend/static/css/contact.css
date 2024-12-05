@@ -1,0 +1,158 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f7f9fb;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stacks header, main, and footer vertically */
+    justify-content: space-between; /* Space between header, main, and footer */
+    min-height: 100vh; /* Take full viewport height */
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #2d3b55;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin: 0;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #f4bb33;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Main Section Styling */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the form vertically */
+    align-items: center; /* Center the form horizontally */
+    flex-grow: 1; /* Take up remaining vertical space */
+    padding-top: 100px; /* Space for the fixed header */
+    padding-bottom: 30px; /* Space for the footer */
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Make form elements fill the form width */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px; /* Maximum width of the form */
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+form label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #2d3b55;
+    text-align: left;
+    width: 100%;
+}
+
+form input, form textarea {
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%; /* Full width of form */
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #f4bb33;
+    outline: none;
+}
+
+form button {
+    background-color: #f4bb33;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #e0a72a;
+    transform: scale(1.05);
+}
+
+form button:active {
+    background-color: #d88e1e;
+    transform: scale(1);
+}
+
+/* Footer Styling */
+footer {
+    font-size: 1rem;
+    color: #555;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

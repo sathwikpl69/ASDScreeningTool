@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ASD Screening Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the ASD Screening Quiz</h1>
+    </header>
+
+    <main>
+        <div id="authForms">
+            <h2>Login</h2>
+            <form id="loginForm" action="{{ url_for('login') }}" method="POST"> <!-- Updated action -->
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <p><a href="{{ url_for('signup') }}">Don't have an account? Sign Up</a></p> <!-- Updated link -->
+            <p><a href="{{ url_for('reset_password') }}">Forgot Password?</a></p> <!-- Updated link -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ASD Screening Quiz. All rights reserved.</p>
+    </footer>
+</body>
+</html>

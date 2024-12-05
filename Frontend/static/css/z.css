@@ -1,0 +1,121 @@
+/* /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Modern and creative font for body text */
+    background-color: #f7f9fc; /* Very light gray for the background */
+    color: #4a4a4a; /* Darker gray for text for better readability */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366; /* Deep navy blue for header */
+    color: white;
+    padding: 20px 0; /* Vertical padding for header */
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600; /* Slightly bolder for emphasis */
+    font-family: 'Montserrat', sans-serif; /* Creative font for headings */
+}
+
+nav {
+    margin: 20px 0; /* Margin for navigation */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block; /* Changed to inline-block for better alignment */
+    margin: 0 20px; /* Increased spacing for better separation */
+}
+
+/* Link Styles */
+.hover-effect {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s, transform 0.2s;
+}
+
+/* Button Styles */
+.button {
+    background-color: #007BFF; /* Bright blue for buttons */
+    padding: 12px 24px; /* Larger padding for a more substantial button */
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 500; /* Medium weight for button text */
+    font-family: 'Poppins', sans-serif; /* Using Poppins for button text */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover Effects */
+.hover-effect:hover {
+    color: #ffcc00; /* Gold color on hover for links */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover for buttons */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Main Section Styles */
+main {
+    padding: 40px 20px; /* Increased vertical padding for a spacious feel */
+    max-width: 800px; /* Centering the main content */
+    margin: 20px auto; /* Center the main content with vertical margin */
+    background-color: white; /* White background for main content area */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h2 {
+    color: #003366; /* Deep navy for headings */
+    margin-top: 20px;
+    border-bottom: 2px solid #003366; /* Underline for headings */
+    padding-bottom: 5px;
+    font-weight: 600; /* Bold weight for headings */
+    font-family: 'Montserrat', sans-serif; /* Creative font for headings */
+}
+
+/* Features Section */
+#features ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Contact Section */
+#contact p {
+    margin: 5px 0;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #003366; /* Consistent footer color */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block; /* Stack navigation items on smaller screens */
+        margin: 10px 0; /* Vertical margin for stacked items */
+    }
+    .button {
+        width: 100%; /* Full-width buttons on mobile */
+    }
+
+    main {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+}

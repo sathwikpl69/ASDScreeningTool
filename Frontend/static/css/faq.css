@@ -1,0 +1,166 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f7f9fb;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #2d3b55;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin: 0;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #f4bb33;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Main Section Styling */
+main {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 100px; /* Offset by header height */
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #2d3b55;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: slideIn 1s ease-out;
+}
+
+/* FAQ List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+li:hover {
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+strong {
+    font-size: 1.2rem;
+    color: #2d3b55;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Footer Styling */
+footer {
+    font-size: 1rem;
+    color: #555;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

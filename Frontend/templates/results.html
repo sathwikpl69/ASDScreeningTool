@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Results</h1>
+
+        <div class="result-box">
+            <h2>Your ASD Screening Result: 
+                <span class="{{ 'positive' if prediction == 'positive' else 'negative' }}">
+                    {{ prediction | capitalize }}
+                </span>
+            </h2>
+
+            <h3>Your Total Score: {{ score }}/10</h3>
+
+            <h3>Prediction Likelihood:</h3>
+            {% if prediction == 'positive' %}
+                <p>The likelihood of having Autism Spectrum Disorder (ASD) is high based on your responses.</p>
+            {% else %}
+                <p>The likelihood of having Autism Spectrum Disorder (ASD) is low based on your responses.</p>
+            {% endif %}
+
+            <h3>Your Responses:</h3>
+            <ul>
+                {% for question, answer in responses.items() %}
+                    <li><strong>{{ question }}:</strong> {{ 'Yes' if answer == '1' else 'No' }}</li>
+                {% endfor %}
+            </ul>
+
+            <div class="button-container">
+                <a href="{{ url_for('dashboard') }}" class="btn">Back to Dashboard</a>
+                <a href="{{ url_for('quiz') }}" class="btn">Retake Quiz</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ASD Screening. All rights reserved.</p>
+    </footer>
+</body>
+</html>
